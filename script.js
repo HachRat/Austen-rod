@@ -19,3 +19,7 @@ function show(id) {
 //     document.getElementById(id).classList.add("active");
 
 // }
+
+document.getElementById("photoFrame").addEventListener("click", function () {
+  this.classList.toggle("expanded");
+});

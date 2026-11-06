@@ -214,10 +214,14 @@ h1, .name{
     margin-top: 32px;
 }
 
+.socials .github   { color: #4b4a4a; }
+.socials .linkedin  { color: #0a66c2; }
+.socials .instagram { color: #e4405f; }
+
 .socials a:hover { transform: scale(1.15); }
-.socials .github:hover    { color: #ffffff; }
-.socials .linkedin:hover  { color: #0a66c2; }
-.socials .instagram:hover { color: #e4405f; }
+.socials .github:hover    { color: #8f8c8c; }
+.socials .linkedin:hover  { color: #2d87e0; }
+.socials .instagram:hover { color: #e26d85; }
 
 .contenty {
     display: none;
@@ -315,4 +319,56 @@ h1, .name{
 
 .buttony:hover {
     transform: translateY(-2px); /* lifts up slightly */
+}
+
+.photo-frame {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  padding: 5px;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: zoom-in;
+  background: #0f0f1a;
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.5), 0 0 60px rgba(123, 47, 247, 0.35);
+  transition: width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+  margin: 20px auto;
+}
+
+/* spinning rainbow border */
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: conic-gradient(#00f5ff, #7b2ff7, #ff2e97, #ffd000, #00f5ff);
+  animation: spin 4s linear infinite;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 50%;
+  background: #0f0f1a;
+  transition: border-radius 0.5s ease;
+}
+
+/* clicked state */
+.photo-frame.expanded {
+  width: min(85vw, 360px);
+  height: min(113vw, 480px);
+  border-radius: 24px;
+  cursor: zoom-out;
+}
+
+.photo-frame.expanded img {
+  border-radius: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
