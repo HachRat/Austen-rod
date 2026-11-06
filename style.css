@@ -1,0 +1,318 @@
+body{
+    background-color: #0a0e0c;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h1, .name{
+    color: #e6eee9;
+    padding: 3px;
+}
+
+.name{
+    font-size: 14px;
+}
+
+.age{
+    color: #4cc596;
+
+}
+
+.main-P{
+    text-align: center;
+    color: #e6eee9;
+    padding: 3px;
+    font-size: 16px;
+    border: 1px solid #2a3a33;
+    border-radius: 8px;
+    background-color: #12181b;
+    min-height: 400px;
+    min-width: 300px;
+    max-width: 900px;
+    margin: 0 auto;
+
+}  
+
+.profile-img{                  
+    border-radius: 50%;               /* ...which 50% turns into a circle */
+    background: #4cc596;
+    color: #08150f;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;                    /* centers the initials inside the circle */
+    justify-content: center;
+    align-items: center;
+}
+
+.profile{
+    display: flex;                    /* avatar and name side by side */
+    align-items: center;
+    gap: 10px;                        /* space between avatar and name */
+    background: #1b2a22;
+    padding: 6px 16px 6px 6px;        /* less padding on the left, so the avatar hugs the edge */
+    border-radius: 999px;             /* pill shape */
+    border: 1px solid #2a3a33;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: fit-content;                /* shrink to fit the content */
+}
+
+.profile:hover{
+    background: #24382d;
+    transform: translateY(-2px);
+}
+
+
+
+.content.active{
+    display: block;
+}
+
+.button {
+    background: #1f7a5a;
+    color: white;
+    border: none;
+    border-radius: 8px;       
+    padding: 12px 24px;       
+    font-size: 16px;
+    cursor: pointer;          
+    transition: background 0.3s, transform 0.2s; 
+    margin-bottom: 0.1rem;
+    margin-top: 2rem;
+}
+
+
+.button:hover {
+    background: #25936d;         /* lighter when the mouse is over it */
+    transform: translateY(-2px); /* lifts up slightly */
+}
+
+.button:active {
+    transform: scale(0.95);      /* shrinks while being pressed */
+}
+
+
+.content {
+    display: none;
+    background: #12181b;                       /* dark background */
+    color: #e6eee9;
+    border-radius: 28px;                       /* the big rounded corners */
+    padding: 28px;
+    max-width: 600px;
+    border: 1px solid #2a3a33;                 /* thin subtle outline */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),   /* depth */
+                0 0 25px rgba(76, 197, 150, 0.15); /* soft green glow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: auto;
+    margin-top: 42px;
+    margin-bottom: 42px;
+    
+}
+
+.content:hover {
+    transform: translateY(-6px);               /* lifts up */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6),
+                0 0 35px rgba(76, 197, 150, 0.3);   /* glow gets stronger */
+}
+
+.content p {
+    margin: auto;
+    line-height: 1.6;                          /* easier to read */
+    color: #9bb0a5;                            /* softer than the title */
+}
+
+/* .tag {
+    background: #4cc596;
+    color: #08150f;
+    padding: 4px 12px;
+    border-radius: 999px;                     
+    font-size: 13px;
+} */
+
+.ok{
+    display: flex;
+    flex-direction: column;     /* stack children top to bottom */
+    align-items: center;  
+}
+
+#buttons, #languages{
+    display: flex;
+    flex-direction: row;        /* left to right (this is the default, so you can omit it) */
+    flex-wrap: wrap;            /* drops to the next line only if there's no room */
+    justify-content: center;    /* centers the group horizontally */
+    align-items: flex-start;    /* items align at the top and keep their own height */
+    gap: 2rem;  
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;   /* heading left, profile right */
+    align-items: center;              /* same vertical line */
+    padding: 12px 24px;
+    background: #12181b;              /* this makes it one box */
+    border-radius: 16px;
+}
+
+.row h1 {
+    margin: 0;                        /* removes the default margin that pushes the heading out of line */
+    font-size: 24px;
+    color: #4cc596;
+}
+
+/* #lang{
+    border-radius: 32px;
+    background: #08150f;
+    width:fit-content;
+
+    margin: 2px;
+    padding: 8px 16px;
+    color: white;
+    transition: transform 0.3s;
+    
+
+}
+
+#lang:hover{
+    transform: translateY(-6px);
+    border:1px solid rgb(34, 26, 26);
+} */
+
+.lang {
+    display: flex;                 /* icon and word side by side */
+    align-items: center;           /* vertically centered together */
+    gap: 12px;                     /* space between icon and word */
+    background: #12181b;
+    color: #e6eee9;
+    font-size: 16px;
+    padding: 10px 16px;
+    margin: 8px 0;
+    border: 1px solid #2a3a33;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.lang i {
+    font-size: 28px;               /* icon size */
+}
+
+.lang:hover {
+    transform: translateX(6px);    /* slides slightly to the right */
+    border-color: #4cc596;
+    box-shadow: 0 0 18px rgba(76, 197, 150, 0.25);
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+}
+
+.socials a {
+    color: #9bb0a5;                    /* the icons use currentColor, so this sets their color */
+    transition: color 0.3s, transform 0.3s;
+    margin-top: 32px;
+}
+
+.socials a:hover { transform: scale(1.15); }
+.socials .github:hover    { color: #ffffff; }
+.socials .linkedin:hover  { color: #0a66c2; }
+.socials .instagram:hover { color: #e4405f; }
+
+.contenty {
+    display: none;
+    background: #740a8f;                       /* dark background */
+    color: #e6eee9;
+    border-radius: 28px;                       /* the big rounded corners */
+    padding: 28px;
+    max-width: 600px;
+    border: 1px solid #2a3a33;                 /* thin subtle outline */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),   /* depth */
+                0 0 25px rgba(76, 197, 150, 0.15); /* soft green glow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: auto;
+    margin-top: 42px;
+    
+}
+
+.contenty:hover {
+    transform: translateY(-6px);               /* lifts up */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6),
+                0 0 35px rgba(76, 197, 150, 0.3);   /* glow gets stronger */
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;       /* bars grow from the middle */
+    gap: 6px;
+    height: 50px;
+}
+
+.loader.hidden {
+    display: none;
+}
+
+.loader span {
+    width: 8px;
+    height: 12px;
+    background: #4cc596;
+    border-radius: 4px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* each bar starts a little later than the one before it */
+.loader span:nth-child(2) { animation-delay: 0.15s; }
+.loader span:nth-child(3) { animation-delay: 0.3s; }
+.loader span:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes bounce {
+    0%, 100% { height: 12px; }
+    50%      { height: 40px; }
+}
+
+/* .buttony {
+    background: #7a1f5c;
+    color: white;
+    border: none;
+    border-radius: 8px;       
+    padding: 12px 24px;       
+    font-size: 16px;
+    cursor: pointer;          
+    transition: background 0.3s, transform 0.2s; 
+    margin-bottom: 0.1rem;
+    margin-top: 2rem;
+} */
+
+
+
+
+.buttony {
+    background-color: #12181b;
+    margin:auto;
+    border: 1px solid #2a3a33;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    /* the moving colors, shown only inside the letters */
+    background-image: linear-gradient(90deg, #4cc596, #2a6fb0, #8a3fb0, #e4405f, #f0b429, #4cc596);
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: flow 4s linear infinite;
+}
+
+@keyframes flow {
+    0%   { background-position: 0% 0; }
+    100% { background-position: 300% 0; }
+}
+
+.buttony:hover {
+    transform: translateY(-2px); /* lifts up slightly */
+}
